@@ -14,7 +14,7 @@ export class AppComponent {
     this.show = !this.show; /*a show változó értékét megváltoztatja az ellentétére ( true/false )*/
   }
 
-  demo(ev: Event) {
-    console.log(ev.type);
+  demo(ev: MouseEvent) {
+    console.log(ev.screenX);
   }
 }
