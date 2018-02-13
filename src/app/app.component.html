@@ -24,6 +24,10 @@
 
 <hr>
 <p>ngClass:</p>
-<div [ngClass]="{ 'valami': true }">
+<div [ngClass]="{ 'valami': show }">
   <p>Működik az osztály</p>
 </div>
+
+<hr>
+
+<button (click)="toggle()">Toggle</button>
