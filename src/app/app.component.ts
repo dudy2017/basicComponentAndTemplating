@@ -15,6 +15,6 @@ export class AppComponent {
   }
 
   demo(ev: Event) {
-    console.log(ev);
+    console.log(ev.type);
   }
 }
