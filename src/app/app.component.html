@@ -28,7 +28,15 @@
   <p>Működik az osztály</p>
 </div>
 
+
 <hr>
+
+<input type="text" [(ngModel)]="inputContent">
+<div>
+  {{inputContent}}
+</div>
+<hr>
+
 <!--esemény elkapása-->
 <button (click)="toggle()"
   (mouseover)="demo($event)"
