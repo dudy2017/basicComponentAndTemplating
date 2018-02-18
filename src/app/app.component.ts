@@ -6,10 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Komponens cím';
   events = ['sziget', 'efott', 'fezen', 'szin'];
   show = true;
   inputContent:string;
+
+  pipeDemo =[
+    {
+      'id': 1,
+      'name': 'Péter'
+    },
+    {
+      'id': 2,
+      'name': 'Máté'
+    },
+    {
+      'id': 3,
+      'name': 'Moncsi'
+    }
+  ];
 
   toggle() {
     this.show = !this.show; /*a show változó értékét megváltoztatja az ellentétére ( true/false )*/
