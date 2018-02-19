@@ -1,3 +1,9 @@
-<p>
-  listdemo works!
-</p>
+<ul>
+  <li *ngFor="let ev of events">
+    {{ ev.name }}
+    <button (click)="delete(ev.id)">remove</button>
+  </li>
+</ul>
+<pre>
+{{ events | json }}
+</pre>
