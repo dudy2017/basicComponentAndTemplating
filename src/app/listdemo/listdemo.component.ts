@@ -37,16 +37,18 @@ export class ListdemoComponent {
       }
     ];
     console.log('megjött a listdemo');
-    const nagyobbId = this.events.reduce((x: EventModel, y: EventModel) => {
-      /*reduce() végigmegy a tömbön és visszaadja a legnagyobb elemet */
-      if (x.id < y.id) {
-        return y;
-      } else {
-        return x;
-      }
-    });
-    console.log(nagyobbId);
-  }
+  //   const nagyobbId = this.events.reduce((x: EventModel, y: EventModel) => {
+  //     /*reduce() végigmegy a tömbön és visszaadja a legnagyobb elemet */
+  //    /* logikai vizsgálat rövidebben: (logikai vizsgálat) ? ha igaz : ha hamis*/
+  //    return x.id > y.id ? x : y;
+  //     // if (x.id < y.id) {
+  //     //   return y;
+  //     // } else {
+  //     //   return x;
+  //     // }
+  //   }).id;    /*ekkor csak az id-t adja vissza*/
+  //   console.log(nagyobbId);
+   }
 
   delete(id: number) {
     this.events = this.events.filter( (ev: EventModel) => ev.id !== id   );
@@ -54,7 +56,8 @@ export class ListdemoComponent {
 
   add(newEventNameInput: HTMLInputElement) {
     console.log(newEventNameInput.value);
-    this.events = [...this.events, new EventModel(5, newEventNameInput.value)];
+    const maxId = this.events.reduce(( x, y ) => x.id > y.id ? x : y).id;
+    this.events = [...this.events, new EventModel(maxId +1, newEventNameInput.value)];
     newEventNameInput.value = '';
   }
 
