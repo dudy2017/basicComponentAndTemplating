@@ -57,7 +57,7 @@ export class ListdemoComponent {
   add(newEventNameInput: HTMLInputElement) {
     console.log(newEventNameInput.value);
     const maxId = this.events.reduce(( x, y ) => x.id > y.id ? x : y).id;
-    this.events = [...this.events, new EventModel(maxId +1, newEventNameInput.value)];
+    this.events = [...this.events, new EventModel(maxId + 1, newEventNameInput.value)];
     newEventNameInput.value = '';
   }
 
