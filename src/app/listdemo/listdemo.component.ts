@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
+import {EventModel} from './event-model';
 
-export class EventModel {
-  id: number;
-  name: string;
-  pic: string;
-}
+
 
 @Component({
   selector: 'app-listdemo',
@@ -40,6 +37,15 @@ export class ListdemoComponent {
       }
     ];
     console.log('megjött a listdemo');
+    const nagyobbId = this.events.reduce((x: EventModel, y: EventModel) => {
+      /*reduce() végigmegy a tömbön és visszaadja a legnagyobb elemet */
+      if (x.id < y.id) {
+        return y;
+      } else {
+        return x;
+      }
+    });
+    console.log(nagyobbId);
   }
 
   delete(id: number) {
@@ -48,6 +54,7 @@ export class ListdemoComponent {
 
   add(newEventNameInput: HTMLInputElement) {
     console.log(newEventNameInput.value);
+    this.events = [...this.events, new EventModel(5, newEventNameInput.value)];
     newEventNameInput.value = '';
   }
 
