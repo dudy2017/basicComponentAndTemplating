@@ -5,9 +5,15 @@
     <button (click)="delete(ev.id)">remove</button>
   </li>
 </ul>
-<label>Elem Hozzáadása</label>
-<input type="text" #newEventNameInput>
-<button (click)="add(newEventNameInput)">hozzáadás</button>
+<div>
+  <label for="eventname">Esemény Hozzáadása</label>
+  <input type="text" #newEventNameInput id="eventname">
+</div>
+<div>
+  <label for="eventpic">Esemény kép</label>
+  <input type="text" #newEventPicInput id="eventpic">
+</div>
+<button (click)="add(newEventNameInput, newEventPicInput)">hozzáadás</button>
 <pre>
 {{ events | json }}
 </pre>

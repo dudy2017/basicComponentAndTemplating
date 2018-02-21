@@ -54,11 +54,12 @@ export class ListdemoComponent {
     this.events = this.events.filter( (ev: EventModel) => ev.id !== id   );
   }
 
-  add(newEventNameInput: HTMLInputElement) {
+  add(newEventNameInput: HTMLInputElement, newEventInputPic: HTMLInputElement) {
     console.log(newEventNameInput.value);
     const maxId = this.events.reduce(( x, y ) => x.id > y.id ? x : y).id;
-    this.events = [...this.events, new EventModel(maxId + 1, newEventNameInput.value)];
+    this.events = [...this.events, new EventModel(maxId + 1, newEventNameInput.value, newEventInputPic.value)];
     newEventNameInput.value = '';
+    newEventInputPic.value = '';
   }
 
 
